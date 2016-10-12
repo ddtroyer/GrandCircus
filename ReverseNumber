@@ -1,0 +1,16 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+
+	int Num = 123456789;
+	while(Num > 0)
+		{
+    	int newNum = Num % 10;
+    	Num = Num / 10;
+		Console.Write(newNum);
+		}
+	}
+}
