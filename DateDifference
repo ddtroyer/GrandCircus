@@ -1,0 +1,37 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		//calculate the difference between two dates
+		int[] firstArray = new int []
+		{
+			//first date written as month, day, year
+			10, 24, 2016
+		};
+	
+		int[] secondArray = new int[]
+		{
+			//second date written as month, day, year
+			12, 31, 2019
+		};
+		
+		{
+		//subtracte second date from the first	
+		int day = firstArray[1] - secondArray[1];
+		int year = firstArray[2] - secondArray[2];
+		int month = firstArray[0] - secondArray[0];
+		
+		//make each number positive
+		int posDay = Math.Abs(day);
+		int posMonth = Math.Abs(month);
+		int posYear = Math.Abs(year);
+		
+		//output showing the differences
+		Console.WriteLine("The difference is " + posYear + " years, " + posMonth + " months, and " + posDay + " days." );
+		}
+		
+	}
+}
+
