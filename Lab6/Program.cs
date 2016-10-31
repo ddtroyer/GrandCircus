@@ -43,26 +43,26 @@ namespace Lab6
 
             firstPart = word.IndexOfAny(new char[] { 'a', 'e', 'i', 'o', 'u' });
 
-            if (firstPart == 0)
+            if (firstPart <= 0)
             {
-                halfWord = (word + "w"); //reverts to original word and adds "w" to end 
+                halfWord = (word + "w");
             }
             else
             {
-                char[] first = word.ToCharArray(0, firstPart); //removes first part of word
+                char[] first = word.ToCharArray(0, firstPart);
                 string firstChar = new string(first);
 
                 wordLength = word.Length;
 
-                char[] rest = word.ToCharArray(firstPart, (wordLength - firstPart)); //rest of word
+                char[] rest = word.ToCharArray(firstPart, (wordLength - firstPart));
                 string restChar = new string(rest);
 
                 halfWord = (restChar + firstChar);
-                
             }
             firstPart = 0;
             pigWord = (halfWord + "ay");
         }
     }
 }
+
 
