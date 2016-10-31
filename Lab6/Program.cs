@@ -18,12 +18,11 @@ namespace Lab6
             {
                 Console.WriteLine("Please enter a sentence:");
                 string sentence = Console.ReadLine();
-                sentence = sentence.ToLower();
-
+ 
                 string[] words = sentence.Split(' ');
 
                 foreach (string word in words)
-                {
+                {                  
                     PigLatin(word, out pigWord);
                     Console.Write(pigWord + " ");
                 }
@@ -37,30 +36,46 @@ namespace Lab6
         }
         static public void PigLatin(string word, out string pigWord)
         {
+           
             string halfWord;
             int firstPart = 0;
             int wordLength = 0;
+            int numSym;
+            word = word.ToLower();
 
-            firstPart = word.IndexOfAny(new char[] { 'a', 'e', 'i', 'o', 'u' });
+            numSym = word.IndexOfAny(new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '@' });
 
-            if (firstPart <= 0)
-            {
-                halfWord = (word + "w");
+            if (numSym >= 0)
+           {
+                pigWord = word;
             }
             else
             {
-                char[] first = word.ToCharArray(0, firstPart);
-                string firstChar = new string(first);
+                firstPart = word.IndexOfAny(new char[] { 'a', 'e', 'i', 'o', 'u' });
 
-                wordLength = word.Length;
+                if (firstPart == 0)
+                {
+                    halfWord = (word + "w");
+                }
+                else if (firstPart < 0)
+                {
+                    halfWord = (word);
+                }
+                else
+                {
+                    char[] first = word.ToCharArray(0, firstPart);
+                    string firstChar = new string(first);
 
-                char[] rest = word.ToCharArray(firstPart, (wordLength - firstPart));
-                string restChar = new string(rest);
+                    wordLength = word.Length;
 
-                halfWord = (restChar + firstChar);
+                    char[] rest = word.ToCharArray(firstPart, (wordLength - firstPart));
+                    string restChar = new string(rest);
+
+                    halfWord = (restChar + firstChar);
+                }
+                firstPart = 0;
+                pigWord = (halfWord + "ay");
             }
-            firstPart = 0;
-            pigWord = (halfWord + "ay");
         }
     }
 }
