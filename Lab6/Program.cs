@@ -18,11 +18,11 @@ namespace Lab6
             {
                 Console.WriteLine("Please enter a sentence:");
                 string sentence = Console.ReadLine();
- 
+
                 string[] words = sentence.Split(' ');
 
                 foreach (string word in words)
-                {                  
+                {
                     PigLatin(word, out pigWord);
                     Console.Write(pigWord + " ");
                 }
@@ -36,17 +36,20 @@ namespace Lab6
         }
         static public void PigLatin(string word, out string pigWord)
         {
-           
+
             string halfWord;
             int firstPart = 0;
             int wordLength = 0;
             int numSym;
+            int punctuation;
+            string punc = "";
+            string withoutPunc;
             word = word.ToLower();
 
             numSym = word.IndexOfAny(new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '@' });
 
             if (numSym >= 0)
-           {
+            {
                 pigWord = word;
             }
             else
@@ -71,10 +74,25 @@ namespace Lab6
                     char[] rest = word.ToCharArray(firstPart, (wordLength - firstPart));
                     string restChar = new string(rest);
 
-                    halfWord = (restChar + firstChar);
+                    punctuation = word.IndexOfAny(new char[] { '!', '?', ',', '.' });
+
+                    if (punctuation != (wordLength - 1))
+                    {
+                        halfWord = (restChar + firstChar);
+                    }
+                    else
+                    {
+                        punc = restChar.Substring(punctuation - 1);
+                        withoutPunc = restChar.Substring(0, punctuation - 1);
+                        //if yes, remove that punctuation
+                        //rename punc
+                       
+
+                        halfWord = (withoutPunc + firstChar);
+                    }
                 }
                 firstPart = 0;
-                pigWord = (halfWord + "ay");
+                pigWord = (halfWord + "ay" + punc);
             }
         }
     }
