@@ -1,0 +1,6 @@
+c:\users\student\documents\visual studio 2015\Projects\Lab10Movies\Lab10Movies\bin\Debug\Lab10Movies.exe.config
+C:\Users\Student\Documents\Visual Studio 2015\Projects\Lab10Movies\Lab10Movies\bin\Debug\Lab10Movies.exe
+C:\Users\Student\Documents\Visual Studio 2015\Projects\Lab10Movies\Lab10Movies\bin\Debug\Lab10Movies.pdb
+C:\Users\Student\Documents\Visual Studio 2015\Projects\Lab10Movies\Lab10Movies\obj\Debug\Lab10Movies.csprojResolveAssemblyReference.cache
+C:\Users\Student\Documents\Visual Studio 2015\Projects\Lab10Movies\Lab10Movies\obj\Debug\Lab10Movies.exe
+C:\Users\Student\Documents\Visual Studio 2015\Projects\Lab10Movies\Lab10Movies\obj\Debug\Lab10Movies.pdb
